@@ -33,4 +33,4 @@ function determineHouseHoldPts(numberInHousehold) {
 }
 
 
-export {determineHouseHoldPts,determineHouseSizePts};
+export {determineHouseHoldPts, determineHouseSizePts};

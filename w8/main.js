@@ -1,5 +1,5 @@
 import { renderTbl } from "./render.js";
-import { determineHouseHoldPts,determineHouseSizePts } from "./CFP.js"; 
+import { determineHouseHoldPts,determineHouseSizePts } from "./cfp.js"; 
 
 const FORM = document.getElementById("form");
 const OUTPUT = document.getElementById("output");
@@ -28,7 +28,7 @@ FORM.addEventListener('submit', function (e) {
     const houseSize = FORM.houses.value;
     start(firstName, lastName, houseMembers, houseSize);
     OUTPUT.innerHTML = "";
-    renderTbl(cfpData);
+    renderTbl(cfpData, FORM);
     FORM.reset();
 });
 

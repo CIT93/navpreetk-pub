@@ -1,5 +1,5 @@
 import { renderTbl } from "./render.js";
-import { determineHouseHoldPts,determineHouseSizePts } from "./cfp.js";
+import { determineHouseHoldPts,determineHouseSizePts } from "./CFP.js"; 
 const FORM = document.getElementById("form");
 const OUTPUT = document.getElementById("output");
 
