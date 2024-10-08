@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <title>Week 9 - Carbon Footprint - Pub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>Calculating Your Carbon Footprint Points</legend>
+            <div>
+                <label for="firstname">First Name:</label>
+                <input type="text" id ="firstname"  >
+                <span id="firstnameError" class="error" ></span>
+            </div>
+            <div>
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname"  />
+                <span id="lastnameError" class="error" ></span>
+            </div>
+            <div>
+                <label for="">Count the members of your household</label>
+                <input type="number" name="housem" min="1" max="6" required />
+            </div>
+            <div>
+                <label for="">Consider the size of your home</label>
+                <!-- <input type="text" name ="houses" required/> -->
+                <select name="houses" required>
+                    <option value="">---Please enter size of home---</option>
+                    <option value="apt">Apartment</option>
+                    <option value="large">Large</option>
+                    <option value="medium">Medium</option>
+                    <option value="small">Small</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+    <div id="output"></div>
+    <div id="tab-data"></div>
+    <script>
+
+        const validateField = event => {
+            const field = event.target.value;
+            const fieldId = event.target.id;
+            const fieldError = document.getElementById(`${fieldId}Error`);
+
+            if (field === '') {
+                fieldError.textContent = `${fieldId} is required`;
+                event.target.classList.add('invalid');
+            } else {
+                fieldError.textContent = '';
+                event.target.classList.remove('invalid');
+            }
+        };
+
+        document.getElementById('firstname').addEventListener('blur', validateField);
+        document.getElementById('lastname').addEventListener('blur', validateField);
+        
+    </script>
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>HouseHold</th>
+                <th>House Size</th>
+                <th>Carbon Footprint</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Navpreet</td>
+                <td>3</td>
+                <td>Large</td>
+                <td>20</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Del</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Navpreet</td>
+                <td>3</td>
+                <td>Large</td>
+                <td>20</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Del</button>
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+</body>
+
+</html>
