@@ -3,7 +3,7 @@ import { determineHouseHoldPts, determineHouseSizePts } from "./cfp.js";
 import { FORM, FNAME, LNAME, SUBMIT} from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
 
-const start = function (first, last, houseMembers, houseSize) {
+const start = (first = "defaultFN", last = "defaultLN", houseMembers = 1, houseSize = "small",...cfpInputs) => {  
   const houseHoldPTS = determineHouseHoldPts(houseMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
@@ -15,13 +15,16 @@ const start = function (first, last, houseMembers, houseSize) {
     houseHoldMPTS: houseHoldPTS,
     houseSPTS: houseSizePTS,
     cfpTotal: total,
+    //extraInputs: cfpInputs,
   });
+
+  console.log(cfpInputs);
 }
 
 renderTbl(cfpData);
 
 //  Function to validate a single field
-const validateField = function(event) {
+const validateField = event => {
   const field = event.target.value;
   const fieldId = event.target.id;
   const fieldError = document.getElementById(`${fieldId}Error`);
@@ -39,11 +42,11 @@ const validateField = function(event) {
 FNAME.addEventListener('blur', validateField);
 LNAME.addEventListener('blur', validateField);
 
-FORM.addEventListener('submit', function (e) {
+FORM.addEventListener('submit', e => {
   e.preventDefault();
   if (FNAME.value !== '' && LNAME.value !== '') {
     SUBMIT.textContent = ' ';
-    start(FNAME.value, LNAME.value,  parseInt(FORM.housem.value), FORM.houses.value);
+    start(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value,"extraInput1", 2);
     saveLS(cfpData);
     renderTbl(cfpData);
     FORM.reset();
@@ -52,14 +55,18 @@ FORM.addEventListener('submit', function (e) {
   }
 });
 
+// rest operator 
+// const add2 = function(...a) {
+//   return 2 + a[3];
+// }
 
-const add2 = function(...a) {
-  return 2 + a[3];
-}
+// const result = add2(1,2,3,4);
 
-const result = add2(1,2,3,4);
+// arrow function
+const add2 = a => 2 + a;
 
-// spread arguement 
+
+const result = add2(100);
 
 //IIFE
 
@@ -69,3 +76,4 @@ const a = 3;
   console.log("inside IIFE");
   console.log(a);
 })(a);
+
