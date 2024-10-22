@@ -1,11 +1,13 @@
 class FP {
-    constructor(first, last, houseMembers, houseSize) {
+    constructor(first, last, houseMembers, houseSize, foodChoice) {
         this.first = first;
         this.last = last;
         this.houseMembers = houseMembers;
         this.houseSize = houseSize;
+        this.foodChoice = foodChoice;
         this.houseHoldPoints();
         this.houseSizePoints();
+        this.foodChoicePoints();
         this.total();
     }
 
@@ -31,16 +33,28 @@ class FP {
         if (this.houseSize === "large") {
             this.houseSizePoints = 10;
         } else if (this.houseSize === "medium") {
-            this.houseSizePoints = 10;
+            this.houseSizePoints = 7;
         } else if (this.houseSize === "small") {
-            this.houseSizePoints = 10;
+            this.houseSizePoints = 4;
         } else if (this.houseSize === "apt") {
-            this.houseSizePoints = 10;
+            this.houseSizePoints = 2;
+        }
+    }
+
+    foodChoicePoints () {
+        if (this.foodChoice === "domestic meat on a daily basis") {
+            this.foodChoicePoints = 10;
+        } else if (this.foodChoice === "domestic meat a few times per week") {
+            this.foodChoicePoints = 8;
+        } else if (this.foodChoice === "vegetarian") {
+            this.foodChoicePoints = 4;
+        } else if (this.foodChoice === "vegan or only eat wild meat") {
+            this.foodChoicePoints = 2;
         }
     }
 
     total () {
-        this.total = this.houseHoldPoints + this.houseSizePoints;
+        this.total = this.houseHoldPoints + this.houseSizePoints + this.foodChoicePoints;
     }
 
 }
