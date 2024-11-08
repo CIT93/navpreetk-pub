@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 12- async workout</title>
+    <script defer src="main.js"></script>
+    <style>
+        html {
+            font-size: 22px
+        }
+
+        body {
+            background-color: #eaecdf;
+            color: rgb(0, 0, 0);
+        }
+        fieldset {
+            border: 4px solid #4CAF50; /* Green border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 10px; /* Space inside the fieldset */
+            margin: 20px 0; /* Space above and below the fieldset */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        }
+        legend {
+            padding: 0 10px; /* Space around the text */
+            font-weight: bold; /* Bold text */
+            color: rgb(73, 116, 203);; /* Text color matching the border */
+            font-size: 24px; /* Font size */
+        }
+
+    </style>
+</head>
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>Workout timer</legend>
+            <div>
+                <label>Choose a type of exercise</label>
+                <select name="exercise" required>
+                    <option value="">---Select exercise---</option>
+                    <option value="Push-ups">Push-Ups</option>
+                    <option value="Situps">Sit-ups</option>
+                    <option value="Squats">Squats</option>
+                    <option value="Lunges">Lunges</option>
+                    <option value="Custom Exercise">Custom Exercise</option>
+
+                </select>
+            </div>
+            <div>
+                <label for="">Target Number of Reps</label>
+                <input type="number" name="reps" min="1" required />
+            </div>
+            <div>
+                <label for="">Time in Seconds</label>
+                <input type="number" name="time" min="1" required />
+            </div>
+            <button type="submit">Start</button>  <span>Click start to begin timer!</span>
+
+            <!-- <span id="submitError" class="error" ></span> -->
+        </fieldset>
+    </form>
+    <div id="output"> 
+</body>
+</html>
