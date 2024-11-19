@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <title>Week 15 - Carbon Footprint - Pub</title>
+    <link rel="stylesheet" href="style.css"> 
+
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>Calculating Your Carbon Footprint Points</legend>
+            <div>
+                <label>First Name:</label>
+                <input type="text" id ="firstname"  maxlength="25" />
+                <span id="firstnameError" class="error" ></span>
+            </div>
+            <div>
+                <label>Last Name:</label>
+                <input type="text" id="lastname"  maxlength="25" />
+                <span id="lastnameError" class="error" ></span>
+            </div>
+            <div>
+                <label for="">Count the members of your household</label>
+                <input type="number" name="housem" min="1" max="6" required />
+            </div>
+            <div>
+                <label for="">Consider the size of your home</label>
+                <select name="houses" required>
+                    <option value="">---Please enter size of home---</option>
+                    <option value="apt">Apartment</option>
+                    <option value="large">Large</option>
+                    <option value="medium">Medium</option>
+                    <option value="small">Small</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Evaluate your food choices</label>
+                <select name="food" required>
+                    <option value="">---Types of food---</option>
+                    <option value="meatDaily">Domestic meat on a daily basis</option>
+                    <option value="meatWeekly">Domestic meat a few times per week</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="veganOrWild">Vegan or only eat wild meat</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button><br>
+            <span id="submitError" class="error" ></span>
+        </fieldset>
+    </form>
+    <table id="tab-data"> </table>
+</body>
+
+</html>
