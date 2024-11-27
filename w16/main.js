@@ -24,6 +24,22 @@ const validateField = (event) => {
 FNAME.addEventListener("blur", validateField);
 LNAME.addEventListener("blur", validateField);
 
+const WC = document.getElementById("water");
+const DW = document.getElementById("dishAndWasher");
+
+function waterCheck() {
+  WC.value === "0" ? (DW.checked = false, DW.disabled = true) : (DW.disabled = false)
+
+  // if (WC.value === "0") {
+  //   DW.checked = false;
+  //   DW.disabled = true; //  got this part from chatGPT
+  // } else {
+  //   DW.disabled = false;
+  // }
+}
+
+WC.addEventListener("change", waterCheck);
+
 FORM.addEventListener("submit", (e) => {
   e.preventDefault();
   if (FNAME.value !== "" && LNAME.value !== "") {
@@ -35,7 +51,8 @@ FORM.addEventListener("submit", (e) => {
       e.target.houses.value,
       e.target.food.value,
       e.target.foodSource.value,
-      parseInt(e.target.water.value),
+      e.target.water.value,
+      e.target.dishAndWasher.checked
     );
     cfpData.push(fpObj);
     saveLS(cfpData);

@@ -57,7 +57,8 @@ const renderTblBtn = (obj, index, data) => {
         FORM.houses.value = obj.houseSize;
         FORM.food.value = obj.foodChoice;
         FORM.foodSource.value = obj.foodSource;
-        FORM.water.value = obj.waterConsumPoints.toString();
+        FORM.water.value = obj.waterConsumValue;
+        FORM.dishAndWasher.checked = obj.dishAndWasher;
         onUpdate(index, data);
     })
     return td;
