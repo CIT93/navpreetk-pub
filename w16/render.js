@@ -59,6 +59,7 @@ const renderTblBtn = (obj, index, data) => {
         FORM.foodSource.value = obj.foodSource;
         FORM.water.value = obj.waterConsumValue;
         FORM.dishAndWasher.checked = obj.dishAndWasher;
+        FORM.hPurchases.value = obj.hPurchaseValue;
         onUpdate(index, data);
     })
     return td;
