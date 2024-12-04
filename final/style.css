@@ -1,0 +1,34 @@
+html {
+    font-size: 22px
+}
+
+body {
+    background-color: hsl(60, 11%, 55%);
+    color: whitesmoke;
+}
+fieldset {
+    border: 4px solid #588157; /* border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Space inside the fieldset */
+    margin: 20px 0; /* Space above and below the fieldset */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+/* table styling  */
+table, th, td {
+    border: 1px solid;
+    padding: 5px;
+}
+tbody tr:nth-child(odd) {
+    background-color: #588157
+}
+tbody tr:nth-of-type(even) {
+    background-color: rgb(134, 163, 122);
+}
+/*  error messages and invalid fields styling*/
+.error {
+    color: red;
+}
+.invalid {
+    border-color: red;
+    background-color: #ffe6e6;
+}

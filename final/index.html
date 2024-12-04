@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision App</title>
+    <script type="module" defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>Should you dine in or dine out?</legend>
+            <div>
+                <label for="">What is your budget?</label>
+                <input type="number" id="setbudget"  name="setbudget" step="0.01" required />
+                <span id="setbudgetError" class="error" ></span>
+            </div>
+            <div>
+                <label for="">What is cost to eat out?</label>
+                <input type="number" id="diningcost" name="diningcost" step="0.01" required />
+                <span id="diningcostError" class="error" ></span>
+                
+            </div>
+            <div>
+                <label for="">Consider the the time you have available</label>
+                <select id="timeavailable" name="timeavailable" required>
+                    <option value="">---Select time available---</option>
+                    <option value="plenty of time">Plenty of time</option>
+                    <option value="limited time">Limited Time</option>
+                </select>
+                <span id="timeavailableError" class="error" ></span>
+            </div>
+            <button type="submit">Submit</button>
+            <span id="submitError" class="error" ></span>
+        </fieldset>
+    </form>
+    <div id="output"></div>
+    <div id="tab-data"></div>   
+</body>
+
+
+</html>
