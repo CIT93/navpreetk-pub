@@ -24,19 +24,6 @@ const validateField = (event) => {
 FNAME.addEventListener("blur", validateField);
 LNAME.addEventListener("blur", validateField);
 
-
-// function waterCheck() {
-//   WC.value === "0" ? (BOTH.checked = false, BOTH.disabled = true) : (BOTH.disabled = false)
-
-//   // if (WC.value === "0") {
-//   //   DW.checked = false;
-//   //   DW.disabled = true; //  got this part from chatGPT
-//   // } else {
-//   //   DW.disabled = false;
-//   // }
-// }
-// WC.addEventListener("change", waterCheck);
-
 WC.addEventListener("change", e => {
   if(parseInt(WC.value) === 0) {
     BOTH.disabled = true;
@@ -44,21 +31,6 @@ WC.addEventListener("change", e => {
     BOTH.disabled = false;
   }
 });
-
-// const RECYCLE1 = document.getElementById("noRecycle");
-// // const RECYCLE = document.getElementById("recycle");
-// const checkboxes = document.querySelectorAll('input[name="recycledWaste"]'); // Select all checkboxes by name
-
-// RECYCLE1.addEventListener("change", () => {
-//   checkboxes.forEach((checkbox) => {
-//     if(RECYCLE1.checked && checkbox.id !== "noRecycle") {
-//       checkbox.checked = false;
-//       checkbox.disabled = true;
-//         } else {
-//           checkbox.disabled = false;
-//         }
-//   });
-// });
 
 const determineRecycleItems = e => {
   const numberChecked = document.querySelectorAll('.recycle:checked').length
@@ -90,7 +62,10 @@ FORM.addEventListener("submit", (e) => {
       e.target.dish_washer.checked,
       parseInt(e.target.hPurchases.value),
       parseInt(e.target.waste.value),
-      determineRecycleItems(e)
+      determineRecycleItems(e),
+      parseInt(e.target.personalVehicle.value),
+      parseInt(e.target.publicTrans.value),
+      parseInt(e.target.flights.value)
     );
     cfpData.push(fpObj);
     saveLS(cfpData);

@@ -77,3 +77,6 @@ const a = 3;
   console.log(a);
 })(a);
 
+start();
+saveLS();
+renderTbl();
